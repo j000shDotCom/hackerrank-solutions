@@ -7,7 +7,7 @@ public class Solution {
         System.out.println(sc.nextInt());
         System.out.println(sc.nextInt());
         System.out.println(sc.nextInt());
-        sc.close;
+        sc.close();
     }
 }
 
