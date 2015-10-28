@@ -1,8 +1,6 @@
 import java.util.*;
 import java.io.*;
 
-
-
 class Solution{
     public static void main(String []argh)
     {
@@ -21,7 +19,8 @@ class Solution{
                     System.out.println("* short");
                 if(x > Integer.MIN_VALUE && x < Integer.MAX_VALUE)
                     System.out.println("* int");
-                System.out.println("* long");
+                if(x > Long.MIN_VALUE && x < Long.MAX_VALUE)
+                    System.out.println("* long");
             }
             catch(Exception e)
             {
