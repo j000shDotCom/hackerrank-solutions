@@ -12,7 +12,7 @@ public class Solution {
         s.close();
         StringBuilder sb = new StringBuilder(n);
         for (int i = 0; i < n; ++i) {
-            for (int j = 0; j < n - i; ++j) {
+            for (int j = 1; j < n - i; ++j) {
                 sb.append(' ');
             }
             for (int j = 0; j < i+1; ++j) {
