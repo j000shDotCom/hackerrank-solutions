@@ -7,7 +7,7 @@ import java.util.regex.*;
 public class Solution {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner(Systen.in);
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int d0 = 0, d1 = 0;
         for(int r = 0; r < n; ++r) {
