@@ -16,6 +16,6 @@ public class Solution {
             else if(a > 0) ++pos;
             else ++zero;
         }
-        System.out.printf("%0.4f\n%0.4f\n%0.4f", pos/n, neg/n, zero/n);
+        System.out.printf("%.4f\n%.4f\n%.4f", (double)pos/n, (double)neg/n, (double)zero/n);
     }
 }
