@@ -13,6 +13,6 @@ public class Solution {
         if(t.charAt(8) == 'P') {
            hh += 12;
         }
-        System.out.println(hh + t.substring(2, 8));
+        System.out.printf("%02d%s", hh, t.substring(2, 8));
     }
 }
