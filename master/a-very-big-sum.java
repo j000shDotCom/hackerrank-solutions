@@ -13,6 +13,7 @@ public class Solution {
         while(s.hasNextLong()) {
             sum += s.nextLong();
         }
+        System.out.println(sum);
         s.close();
     }
 }
