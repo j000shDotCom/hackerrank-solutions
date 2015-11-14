@@ -27,7 +27,7 @@ public class Solution {
             return new String(chars);
         }
         if (mod == 1) {
-            n5 -= 2;
+            n5 -= 3;
         } else {
             n5 -= 1;
         }
