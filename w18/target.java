@@ -24,8 +24,10 @@ public class Solution {
     
     private static int getScore(final int[] rings, int x, int y) {
         double c = getHypotenuse(x, y);
+        if (c >= rings[0])
+            return 0;
         for(int i = 0; i < rings.length; ++i) {
-            if(c >= rings[i])
+            if (c > rings[i])
                 return i;
         }
         return rings.length;
