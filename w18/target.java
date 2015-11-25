@@ -34,6 +34,6 @@ public class Solution {
     }
     
     private static double getHypotenuse(int a, int b) {
-        return Math.sqrt(a*a + b*b);
+        return Math.sqrt((long)a*a + (long)b*b);
     }
 }
