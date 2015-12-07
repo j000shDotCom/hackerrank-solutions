@@ -10,7 +10,7 @@ public class Solution {
         in.close();
         int max = 0;
         while (l < r) {
-            for(int i = l; i < r; ++i) {
+            for(int i = l; i <= r; ++i) {
                 int xor = l ^ i;
                 if (xor > max)
                     max = xor;
