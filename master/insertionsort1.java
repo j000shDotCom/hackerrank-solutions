@@ -11,7 +11,7 @@ public class Solution {
         int insertVal = ar[ar.length - 1];
         boolean placed = false;
         while (!placed && i >= 0) {
-            if(ar[i] > insertVal) {
+            if(ar[i] >= insertVal) {
                 ar[i+1] = ar[i--];
             } else {
                 ar[i+1] = insertVal;
