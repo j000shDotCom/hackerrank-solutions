@@ -9,26 +9,8 @@ public class Solution {
         int k = in.nextInt();
         long s = Long.parseUnsignedLong(in.next(), 2);
         
-        /*
-        // set first and last bits
-        int first = (s & (1 << (n + k - 2))) >> k;
-        int last = s & 1;
-        int ans = first ^ last;
-        System.out.println(first + " " + Integer.toUnsignedString(ans, 2));
-        
-        int[] bits = new int[k];
-        bits[0] = first;
-        
-        for (int i = ; --i) {
-            int bit = (s & (1 << i)) >> i;
-            bits[i % k] = bit;
-            bits[i] = 
-        }
-        */
-        
         // set first and last bits
         int xor = 1 & (int)s;
-        int kxor = xor;
         long ans = (1 << n - 1) ^ xor;
         
         for (int i = 1; i < n - 1; ++i) {
@@ -38,13 +20,12 @@ public class Solution {
             
             int bit;
             if (i <= k) {
-                bit = sbit ^ nbit;
+                bit = sbit ^ s1bit;
             } else {
                 int kbit = getBit(s, i - k);
-                bit = sbit ^ nbit ^ kbit;
+                bit = sbit ^ s1bit ^ kbit;
             }
-            // System.out.printf("%d %d %d %d\n", i, nbit, sbit, bit);
-
+            //System.out.printf("%d %d %d %d\n", i, nbit, sbit, bit);
             ans ^= getMask(i, bit);
         }
         System.out.println(Long.toUnsignedString(ans, 2));
@@ -56,12 +37,5 @@ public class Solution {
     
     private static long getMask(int k, int bit) {
         return (long) bit << k;
-    }
-    
-    private static int xorBits(int[] bits) {
-        int xor = 0;
-        for (int b : bits)
-            xor ^= b;
-        return xor;
     }
 }
