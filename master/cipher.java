@@ -10,30 +10,58 @@ public class Solution {
         long s = Long.parseUnsignedLong(in.next(), 2);
         
         /*
-        StringBuilder bu = new StringBuilder(num.length() * 2);
-        for(char c : num.toCharArray())
-            bu.append(c).append(' ');
-        String numSpaced = bu.toString().trim();
-        for(int i = 0; i < k; ++i)
-            System.err.printf("%"+(2*bu.length()+k+2*i)+"s\n", numSpaced);
-        */
+        // set first and last bits
+        int first = (s & (1 << (n + k - 2))) >> k;
+        int last = s & 1;
+        int ans = first ^ last;
+        System.out.println(first + " " + Integer.toUnsignedString(ans, 2));
         
-        long mask = (1 << n) - 1;
-        long ans = 0;
-        while(k-- > 0) {
-            ans ^= (s & mask);
-            s >>= 1;
-        }
+        int[] bits = new int[k];
+        bits[0] = first;
         
-        /*
-        long ans = 0;
-        int xor = 0;
-        for(int i = 0; b > 0; ++i) {
-            boolean bit = 1 & b;
-            xor |= bit << i;
-            b = b >> 1;
+        for (int i = ; --i) {
+            int bit = (s & (1 << i)) >> i;
+            bits[i % k] = bit;
+            bits[i] = 
         }
         */
+        
+        // set first and last bits
+        int xor = 1 & (int)s;
+        int kxor = xor;
+        long ans = (1 << n - 1) ^ xor;
+        
+        for (int i = 1; i < n - 1; ++i) {
+            int sbit = getBit(s, i);
+            int s1bit = getBit(s, i-1);
+            int nbit = getBit(n, i-1);
+            
+            int bit;
+            if (i <= k) {
+                bit = sbit ^ nbit;
+            } else {
+                int kbit = getBit(s, i - k);
+                bit = sbit ^ nbit ^ kbit;
+            }
+            // System.out.printf("%d %d %d %d\n", i, nbit, sbit, bit);
+
+            ans ^= getMask(i, bit);
+        }
         System.out.println(Long.toUnsignedString(ans, 2));
+    }
+    
+    private static int getBit(long n, int k) {
+        return 1 & (int)(n >> k);
+    }
+    
+    private static long getMask(int k, int bit) {
+        return (long) bit << k;
+    }
+    
+    private static int xorBits(int[] bits) {
+        int xor = 0;
+        for (int b : bits)
+            xor ^= b;
+        return xor;
     }
 }
