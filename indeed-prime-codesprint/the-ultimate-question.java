@@ -4,7 +4,7 @@ import java.util.*;
 public class Solution {
 
     public enum Op {
-        M('*'), A('+');
+        A('+'), M('*');
         public char c;
         Op(char c) {this.c = c;}
     }
