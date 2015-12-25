@@ -14,7 +14,7 @@ public class Solution {
     
     private static int getPalindromeIndex(String str) {
         int len = str.length();
-        for(int i = 0; i < len / 2; ++i) {
+        for(int i = 0; i <= len / 2; ++i) {
             int j = len - i - 1;
             char a = str.charAt(i);
             char b = str.charAt(j);
