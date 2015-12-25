@@ -5,7 +5,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        in.nextInt();
+        in.next();
         while(in.hasNext()) {
             System.out.println(getPalindromeIndex(in.next()));
         }
@@ -14,16 +14,16 @@ public class Solution {
     
     private static int getPalindromeIndex(String str) {
         int len = str.length();
-        for(int i = 0; i <= len / 2; ++i) {
+        for(int i = 0; i < len / 2; ++i) {
             int j = len - i - 1;
             char a = str.charAt(i);
             char b = str.charAt(j);
             if (a == b)
                 continue;
-            char nextb = str.charAt(j - 1);
-            if (a != nextb)
-                return i;
-            return j;
+            char nexta = str.charAt(i + 1);
+            if (nexta != b)
+                return j;
+            return i;
         }
         return -1;
     }
