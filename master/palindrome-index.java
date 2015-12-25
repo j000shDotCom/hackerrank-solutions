@@ -20,11 +20,15 @@ public class Solution {
             char b = str.charAt(j);
             if (a == b)
                 continue;
-            char nexta = str.charAt(i + 1);
-            if (nexta != b)
-                return j;
-            return i;
+            return isPalindrome(str.substring(i, j)) ? j : i;
         }
         return -1;
+    }
+    
+    private static boolean isPalindrome(String s) {
+        int len = s.length();
+        if (len < 2)
+            return true;
+        return s.charAt(0) == s.charAt(len - 1) && isPalindrome(s.substring(1, len - 1));
     }
 }
