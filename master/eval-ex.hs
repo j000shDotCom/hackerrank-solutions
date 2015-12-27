@@ -1,5 +1,5 @@
 solve :: Double -> Double
-solve x = foldl (\ acc n -> acc + (power x n / (fromIntegral $ factorial n))) 0.0 [0..10]
+solve x = foldl (\ acc n -> acc + (power x n / (fromIntegral $ factorial n))) 0.0 [0..9]
 
 power :: (Num a) => a -> Int -> a
 power x n
