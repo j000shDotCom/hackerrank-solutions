@@ -1,7 +1,5 @@
 f :: [Int] -> Int
-f [] = 0
-f [x] = x
-f (x:_:xs) = x + f xs
+f = sum . filter odd
 
 main = do
    inputdata <- getContents
