@@ -13,9 +13,9 @@ public class Arithmetic {
       int T = sc.nextInt(); // tip percentage
       int X = sc.nextInt(); // tax percentage
       
-      double tip = (T * M) / 100;
-      double tax = (X * M) / 100;
-      int total = (int) Math.round((M + tip + tax) * 100) / 100;
+      double tip = T * M / 100.0;
+      double tax = X * M / 100.0;
+      int total = (int) Math.round(M + tip + tax);
       
       System.out.println("The final price of the meal is $" + total + ".");
       
