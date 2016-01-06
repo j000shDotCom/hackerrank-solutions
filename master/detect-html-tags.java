@@ -8,22 +8,27 @@ public class Solution {
         in.nextLine();
         StringBuilder sb = new StringBuilder();
         while (in.hasNextLine()) {
-            sb.append(in.nextLine());
-            sb.append(' ');
+            sb.append(in.nextLine()).append(' ');
         }
-        String str = sb.toString().trim();
-        Pattern pattern = Pattern.compile("</([^>]+)>");
-        Matcher m = pattern.matcher(str);
+        
         Set<String> tags = new TreeSet<>();
+        String str = sb.toString();
+        Pattern pattern = Pattern.compile("</?\\s*(\\w+)");
+        Matcher m = pattern.matcher(str);
         while (m.find()) {
             tags.add(m.group(1));
         }
-        if (Pattern.matches("\\[[^\\]]*\\]\\([^\\)]*\\)", str)) {
+        pattern = Pattern.compile("\\[[^\\]]*\\]\\([^\\)]*\\)");
+        m = pattern.matcher(str);
+        if (m.find()) {
             tags.add("a");
         }
+        
         sb = new StringBuilder();
         for (String s : tags)
             sb.append(s).append(";");
-        System.out.println(sb.deleteCharAt(sb.length() - 1).toString());
+        if(sb.length() > 0)
+            sb.deleteCharAt(sb.length() - 1);
+        System.out.println(sb.toString());
     }
 }
