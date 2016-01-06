@@ -23,7 +23,7 @@ public class Solution {
         String subStr = sb.toString().trim();
         
         int count = 0;
-        Pattern pattern = Pattern.compile("[\\w]" + subStr + "[\\w]");
+        Pattern pattern = Pattern.compile("[\\S]" + subStr + "[\\S]");
         Matcher m = pattern.matcher(str);
         while (m.find()) {
             count += 1;
