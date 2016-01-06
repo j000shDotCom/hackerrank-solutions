@@ -15,7 +15,7 @@ public class Solution {
         Pattern pattern = Pattern.compile("href=\"([^\"]*)\"[^>]*>([^<]*)</a>");
         Matcher m = pattern.matcher(str);
         while (m.find()) {
-            System.out.println(m.group(1) + "," + m.group(2));
+            System.out.println(m.group(1).trim() + "," + m.group(2).trim());
         }
     }
 }
