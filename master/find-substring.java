@@ -23,7 +23,7 @@ public class Solution {
         String subStr = sb.toString().trim();
         
         int count = 0;
-        Pattern pattern = Pattern.compile("[a-zA-Z_]" + subStr + "[a-zA-Z_]");
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9_]+" + subStr + "[a-zA-Z0-9_]+");
         Matcher m = pattern.matcher(str);
         while (m.find()) {
             count += 1;
