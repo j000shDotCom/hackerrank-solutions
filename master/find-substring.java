@@ -23,7 +23,7 @@ public class Solution {
         String subStr = sb.toString().trim();
         
         int count = 0;
-        Pattern pattern = Pattern.compile("[\\S]" + subStr + "[\\S]");
+        Pattern pattern = Pattern.compile("[a-zA-Z_]" + subStr + "[a-zA-Z_]");
         Matcher m = pattern.matcher(str);
         while (m.find()) {
             count += 1;
