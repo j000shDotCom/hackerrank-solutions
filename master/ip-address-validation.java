@@ -14,7 +14,7 @@ public class Solution {
             boolean valid = true;
             if (ipv4.length == 4) {
                 for (String s : ipv4)
-                    valid &= 256 > Integer.valueOf(s, 10);
+                    valid &= Pattern.matches("\\d{1,3}", s) && 256 > Integer.valueOf(s, 10);
                 System.out.println(valid ? "IPv4" : "Neither");
             } else if (ipv6.length == 8) {
                 for (String s : ipv6)
