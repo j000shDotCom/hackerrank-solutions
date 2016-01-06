@@ -12,7 +12,7 @@ public class Solution {
             sb.append(' ');
         }
         String str = sb.toString().trim();
-        Pattern pattern = Pattern.compile("href=\"([^\"]*)\"[^>]*>(<[^>]*?>)*([^<]*)");
+        Pattern pattern = Pattern.compile("<a href=\"([^\"]*)\"[^>]*>(<[^>]*?>)*([^<]*)");
         Matcher m = pattern.matcher(str);
         while (m.find()) {
             System.out.println(m.group(1) + "," + m.group(3).trim());
