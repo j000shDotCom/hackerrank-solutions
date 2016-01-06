@@ -20,14 +20,14 @@ public class Solution {
         while (n-- > 0)
             subs.add(in.nextLine().trim());
         
-        int count = 0;
         for (String subStr : subs) {
+            int count = 0;
             Pattern pattern = Pattern.compile("\\b\\w+" +  subStr + "\\w+\\b");
             Matcher m = pattern.matcher(str);
             while (m.find()) {
                 count += 1;
             }
+            System.out.println(count);
         }
-        System.out.println(count);
     }
 }
