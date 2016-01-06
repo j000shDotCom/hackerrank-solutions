@@ -13,20 +13,20 @@ public class Solution {
         
         String str = sb.toString().trim();
         
-        sb = new StringBuilder();
         n = in.nextInt();
         in.nextLine();
         
+        List<String> subs = new ArrayList<>(n);
         while (n-- > 0)
-            sb.append(in.nextLine()).append('\n');
-        
-        String subStr = sb.toString().trim();
+            subs.add(in.nextLine().trim());
         
         int count = 0;
-        Pattern pattern = Pattern.compile("[a-zA-Z0-9_]+" + subStr + "[a-zA-Z0-9_]+");
-        Matcher m = pattern.matcher(str);
-        while (m.find()) {
-            count += 1;
+        for (String subStr : subs) {
+            Pattern pattern = Pattern.compile("[a-zA-Z0-9_]+" + subStr + "[a-zA-Z0-9_]+");
+            Matcher m = pattern.matcher(str);
+            while (m.find()) {
+                count += 1;
+            }
         }
         
         System.out.println(count);
