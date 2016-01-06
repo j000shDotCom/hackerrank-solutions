@@ -22,7 +22,7 @@ public class Solution {
         
         int count = 0;
         for (String subStr : subs) {
-            Pattern pattern = Pattern.compile("\\w" + subStr + "\\w");
+            Pattern pattern = Pattern.compile("\\b\\w+" +  subStr + "\\w+\\b");
             Matcher m = pattern.matcher(str);
             while (m.find()) {
                 count += 1;
