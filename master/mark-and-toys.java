@@ -15,8 +15,8 @@ public class Solution {
         Arrays.sort(prices);
         
         i = 0;
-        while(k > 0 && i < prices.length && k > prices[i])
-            k -= prices[++i];
+        while(i < prices.length && k > prices[i])
+            k -= prices[i++];
         System.out.println(i);
     }
 }
