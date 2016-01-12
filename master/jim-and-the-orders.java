@@ -6,12 +6,21 @@ public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         in.nextInt();
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Set<Integer>> map = new TreeMap<>();
         int count = 1;
         while (in.hasNextInt()) {
-            map.put(in.nextInt() + in.nextInt(), count++);
+            int n = in.nextInt() + in.nextInt();
+            Set<Integer> set;
+            if (!map.containsKey(n)) {
+                set = new TreeSet<>();
+                map.put(n, set);
+            } else {
+                set = map.get(n);
+            }
+            set.add(count++);
         }
-        for (int i : map.values())
-            System.out.print(i + " ");
+        for (Set<Integer> i : map.values())
+            for (int j : i)
+            System.out.print(j + " ");
     }
 }
