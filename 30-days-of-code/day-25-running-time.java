@@ -9,7 +9,7 @@ public class Solution {
         while(in.hasNextInt()) {
             int n = in.nextInt();
             Double sqrt = Math.sqrt(n);
-            boolean prime = true;
+            boolean prime = n > 1;
             for(int i = 2; prime && i < sqrt; ++i) {
                 prime &= n % i != 0;
             }
