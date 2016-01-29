@@ -1,15 +1,12 @@
     public static Node removeDuplicates(Node head) {
-        if(head == null)
+        if (head == null)
             return head;
         Node curr = head;
-        Node next = curr.next;
-        while (next != null) {
-            if (curr.data == next.data) {
-                next = next.next;
+        while (curr.next != null) {
+            if (curr.data == curr.next.data) {
+                curr.next = curr.next.next;
             } else {
-                curr.next = next;
-                curr = next;
-                next = curr.next;
+                curr = curr.next;
             }
         }
         return head;
