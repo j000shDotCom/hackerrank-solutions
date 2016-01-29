@@ -3,7 +3,7 @@
             return head;
         Node curr = head;
         Node next = curr.next;
-        while (curr.next != null) {
+        while (next != null) {
             if (curr.data == next.data) {
                 next = next.next;
             } else {
