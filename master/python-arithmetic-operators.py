@@ -1,3 +1,2 @@
-a = int(raw_input())
-b = int(raw_input())
+a, b = int(raw_input()), int(raw_input())
 print (a+b), '\n', (a-b), '\n', (a*b)
